@@ -1,0 +1,40 @@
+var app = new Vue({
+    el:'#app',
+    data:{
+        isLogin: false,
+        loginEmail:'',
+        loginPassword:''
+    },
+    created(){
+        if(localStorage.token){
+            this.isLogin= true;
+        } 
+    },
+    methods: {
+        login() {
+            console.log(this.loginEmail,this.loginPassword)
+            axios.post('http://localhost:3000/user/login', {
+                email: this.loginEmail,
+                password: this.loginPassword
+              })
+              .then( (response)=> {
+                  console.log("berhasil")
+                localStorage.setItem("token", response.data.token)
+                this.isLogin=true
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+        },
+        addKanban() {
+            
+        },
+        updateKanban()  {
+
+        },
+        deleteKanban()  {
+
+        }
+
+    }
+})
