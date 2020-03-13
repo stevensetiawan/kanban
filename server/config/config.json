@@ -6,11 +6,11 @@
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+  "production":{
+    "username":"gecvwgrxzymtli",
+    "password": "e9947bc69ef4775ac7c5868fc352beb784a554b4d9d6c54510b2214419c5f402",
+    "database": "d76a8oh84ou66c",
+    "host": "ec2-34-233-186-251.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
