@@ -46,7 +46,7 @@ export default {
         this.$emit('emitShowLogin')
     },
     loginRegister() {
-      axios.post("http://localhost:3000/user/register", {
+      axios.post("https://hidden-scrubland-28835.herokuapp.com/user/register", {
         email: this.loginEmail,
         password: this.loginPassword
       }).then(response=>{

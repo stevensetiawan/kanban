@@ -142,7 +142,7 @@ AddKanban
       getKanban(){
           axios({
             method:"GET",
-            url:"http://localhost:3000/kanban",
+            url:"https://hidden-scrubland-28835.herokuapp.com/kanban",
             headers:{token: localStorage.getItem("token")}
 
           })
@@ -157,7 +157,7 @@ AddKanban
             })
             this.kanban = kanban;
           }).catch(err =>{
-            console.log(err)
+            console.log(err.message)
               //res.status(400).json(err)
           })
       },
@@ -165,7 +165,7 @@ AddKanban
         
           axios({
             method:"DELETE",
-            url:"http://localhost:3000/kanban/"+task.id,
+            url:"https://hidden-scrubland-28835.herokuapp.com/kanban/"+task.id,
             headers:{token:localStorage.getItem("token")}
           }).then(data=>{
               this.getKanban()
@@ -203,7 +203,7 @@ AddKanban
         }
 
           axios({
-            url:"http://localhost:3000/kanban/" + task.id,
+            url:"https://hidden-scrubland-28835.herokuapp.com/kanban/" + task.id,
             method:"PUT",
             data:task,
               headers:{token: localStorage.getItem("token")}
@@ -224,7 +224,7 @@ AddKanban
         }   
           axios({
             method:"PUT",
-            url:"http://localhost:3000/kanban/"+task.id,
+            url:"https://hidden-scrubland-28835.herokuapp.com/kanban/"+task.id,
             data:task,
             headers:{token:localStorage.getItem("token")}
           }).then(response=>{

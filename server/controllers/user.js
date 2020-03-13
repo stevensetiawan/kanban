@@ -13,7 +13,10 @@ class userController {
         }
         User.create(input)
         .then(data=>{
-            let token = jwt.jwtSign(data.id)
+            let token = jwt.jwtSign({
+                id: data.id,
+                email: data.email
+            })
             res.status(200).json({token})
         }).catch(err=>{
             res.status(400).json(err)

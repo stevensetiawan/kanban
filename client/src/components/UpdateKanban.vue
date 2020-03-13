@@ -78,7 +78,7 @@ export default {
     updateData() {
       axios({
          method:"PUT",
-         url:"http://localhost:3000/kanban/"+this.taskProp.id,
+         url:"https://hidden-scrubland-28835.herokuapp.com/kanban/"+this.taskProp.id,
          headers:{token:localStorage.token},
          data: this.taskProp
     })

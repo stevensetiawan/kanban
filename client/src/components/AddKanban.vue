@@ -43,7 +43,7 @@ export default {
     addData() {
         axios({
             method:'POST',
-            url:"http://localhost:3000/kanban",
+            url:"https://hidden-scrubland-28835.herokuapp.com/kanban",
             data:{
                 title: this.addTitle,
                 description: this.addDescription

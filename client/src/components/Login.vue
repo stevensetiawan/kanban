@@ -57,7 +57,7 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://localhost:3000/user/login", {
+        .post("https://hidden-scrubland-28835.herokuapp.com/user/login", {
           email: this.loginEmail,
           password: this.loginPassword
         })
@@ -78,7 +78,7 @@ export default {
       console.log(googleUser);
       axios({
         method: "POST",
-        url: "http://localhost:3000/user/googleSign",
+        url: "https://hidden-scrubland-28835.herokuapp.com/user/googleSign",
         data: {
           googleToken: googleUser.getAuthResponse().id_token
         }
@@ -97,7 +97,7 @@ export default {
     googleLogin() {
       axios({
         method: "POST",
-        url: "http://localhost:3000/user/googleSign",
+        url: "https://hidden-scrubland-28835.herokuapp.com/user/googleSign",
         data: {
           email: this.loginEmail,
           password: this.loginPassword

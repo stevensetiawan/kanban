@@ -10781,7 +10781,7 @@ var _default = {
     login: function login() {
       var _this = this;
 
-      _axios.default.post("http://localhost:3000/user/login", {
+      _axios.default.post("https://hidden-scrubland-28835.herokuapp.com/user/login", {
         email: this.loginEmail,
         password: this.loginPassword
       }).then(function (response) {
@@ -10805,7 +10805,7 @@ var _default = {
       console.log(googleUser);
       (0, _axios.default)({
         method: "POST",
-        url: "http://localhost:3000/user/googleSign",
+        url: "https://hidden-scrubland-28835.herokuapp.com/user/googleSign",
         data: {
           googleToken: googleUser.getAuthResponse().id_token
         }
@@ -10824,7 +10824,7 @@ var _default = {
     googleLogin: function googleLogin() {
       (0, _axios.default)({
         method: "POST",
-        url: "http://localhost:3000/user/googleSign",
+        url: "https://hidden-scrubland-28835.herokuapp.com/user/googleSign",
         data: {
           email: this.loginEmail,
           password: this.loginPassword
@@ -11157,7 +11157,7 @@ var _default = {
     loginRegister: function loginRegister() {
       var _this = this;
 
-      _axios.default.post("http://localhost:3000/user/register", {
+      _axios.default.post("https://hidden-scrubland-28835.herokuapp.com/user/register", {
         email: this.loginEmail,
         password: this.loginPassword
       }).then(function (response) {
@@ -11661,7 +11661,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "PUT",
-        url: "http://localhost:3000/kanban/" + this.taskProp.id,
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban/" + this.taskProp.id,
         headers: {
           token: localStorage.token
         },
@@ -11968,7 +11968,7 @@ var _default = {
 
       (0, _axios.default)({
         method: 'POST',
-        url: "http://localhost:3000/kanban",
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban",
         data: {
           title: this.addTitle,
           description: this.addDescription
@@ -12168,7 +12168,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "GET",
-        url: "http://localhost:3000/kanban",
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban",
         headers: {
           token: localStorage.getItem("token")
         }
@@ -12185,7 +12185,7 @@ var _default = {
         });
         _this.kanban = kanban;
       }).catch(function (err) {
-        console.log(err); //res.status(400).json(err)
+        console.log(err.message); //res.status(400).json(err)
       });
     },
     deleteKanban: function deleteKanban(task) {
@@ -12193,7 +12193,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "DELETE",
-        url: "http://localhost:3000/kanban/" + task.id,
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban/" + task.id,
         headers: {
           token: localStorage.getItem("token")
         }
@@ -12230,7 +12230,7 @@ var _default = {
       }
 
       (0, _axios.default)({
-        url: "http://localhost:3000/kanban/" + task.id,
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban/" + task.id,
         method: "PUT",
         data: task,
         headers: {
@@ -12254,7 +12254,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "PUT",
-        url: "http://localhost:3000/kanban/" + task.id,
+        url: "https://hidden-scrubland-28835.herokuapp.com/kanban/" + task.id,
         data: task,
         headers: {
           token: localStorage.getItem("token")
@@ -57055,7 +57055,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51678" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55908" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
