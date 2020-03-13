@@ -72,7 +72,7 @@ class kanbanController {
             .then(data => {
                 res.status(200).json(data)
             }).catch(err => {
-                res.status(400).json({ msg: "Error coy" })
+                res.status(400).json({ msg: err.message })
             })
     }
     // get all end/
