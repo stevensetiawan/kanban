@@ -81,7 +81,7 @@ Response ERROR (400):
 	{message: cannot add data}
 }
 
-2. GET /tasks
+2. GET /kanban
 
 Example Input (Request Headers):
 
@@ -106,7 +106,7 @@ Response ERROR (404):
 	"message:data is not found"
 }
 
-3. GET /tasks/:id
+3. GET /kanban/:id
 
 Example Input (Request Headers):
 
@@ -132,7 +132,7 @@ Response ERROR (404):
 	"data is not found"
 }
 
-4. PUT /tasks/:id
+4. PUT /kanban/:id
 Example Input (Request Headers):
 
 {
@@ -163,7 +163,7 @@ Response ERROR (404):
 
 	"update fail"
 
-5. DELETE /tasks/:id
+5. DELETE /kanban/:id
 
 Example Input (Request Headers):
 
