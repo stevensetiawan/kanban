@@ -10771,7 +10771,7 @@ var _default = {
       loginEmail: "",
       loginPassword: "",
       googleSignInParams: {
-        client_id: "943014017870-6db0j02mtmaemcautdduiuc8lmpi2dq1.apps.googleusercontent.com"
+        client_id: "795212405793-5749k8v2m0h0pv9m1e7g2940scvgc36g.apps.googleusercontent.com"
       },
       showPassword: false,
       errorMessage: null
@@ -57055,7 +57055,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55908" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52171" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

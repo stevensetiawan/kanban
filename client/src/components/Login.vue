@@ -48,7 +48,7 @@ export default {
       loginPassword: "",
       googleSignInParams: {
         client_id:
-          "943014017870-6db0j02mtmaemcautdduiuc8lmpi2dq1.apps.googleusercontent.com"
+          "795212405793-5749k8v2m0h0pv9m1e7g2940scvgc36g.apps.googleusercontent.com"
       },
       showPassword:false,
       errorMessage:null
