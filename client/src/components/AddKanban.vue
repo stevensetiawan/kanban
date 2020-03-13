@@ -24,10 +24,6 @@
           id="exampleInputPassword1"
         />
       </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
@@ -55,6 +51,7 @@ export default {
             headers:{token:localStorage.getItem("token")}
         }).then(response=>{
           this.$emit("emitAddCardKanban")
+          this.$emit("emitCloseForm")
       }).catch(err=>{
         console.log(err)
         //res.status(400).json({msg:"email atau password salah"})

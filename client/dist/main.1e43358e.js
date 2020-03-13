@@ -11037,20 +11037,16 @@ exports.default = _default;
               }
             }),
             _vm._v("Show Password\n      "),
-            _c(
-              "label",
-              {
-                staticClass: "form-check-label",
-                attrs: { for: "exampleCheck1" }
-              },
-              [_vm._v("Check me out")]
-            )
+            _c("label", {
+              staticClass: "form-check-label",
+              attrs: { for: "exampleCheck1" }
+            })
           ]),
           _vm._v(" "),
           _c(
             "button",
             { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
+            [_vm._v("Login")]
           ),
           _vm._v(" "),
           _c(
@@ -11370,20 +11366,16 @@ exports.default = _default;
             }
           }),
           _vm._v("Show Password\n      "),
-          _c(
-            "label",
-            {
-              staticClass: "form-check-label",
-              attrs: { for: "exampleCheck1" }
-            },
-            [_vm._v("Check me out")]
-          )
+          _c("label", {
+            staticClass: "form-check-label",
+            attrs: { for: "exampleCheck1" }
+          })
         ]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
+          [_vm._v("Register")]
         )
       ]
     ),
@@ -11391,6 +11383,7 @@ exports.default = _default;
     _c(
       "button",
       {
+        staticClass: "btn btn-primary",
         on: {
           click: function($event) {
             $event.preventDefault()
@@ -11643,8 +11636,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
 var _default = {
   props: ["taskProp"],
   components: {
@@ -11836,9 +11827,7 @@ exports.default = _default;
                       ]
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _vm._m(2)
+                ])
               ])
             ]
           )
@@ -11886,27 +11875,6 @@ var staticRenderFns = [
         "label",
         { staticClass: "form-check-label", attrs: { for: "exampleCheck1" } },
         [_vm._v("Check me out")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Close")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("Save changes")]
       )
     ])
   }
@@ -11987,10 +11955,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -12014,6 +11978,8 @@ var _default = {
         }
       }).then(function (response) {
         _this.$emit("emitAddCardKanban");
+
+        _this.$emit("emitCloseForm");
       }).catch(function (err) {
         console.log(err); //res.status(400).json({msg:"email atau password salah"})
       });
@@ -12115,8 +12081,6 @@ exports.default = _default;
           })
         ]),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-primary", attrs: { type: "submit" } },
@@ -12126,25 +12090,7 @@ exports.default = _default;
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group form-check" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", id: "exampleCheck1" }
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "exampleCheck1" } },
-        [_vm._v("Check me out")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -12266,6 +12212,9 @@ var _default = {
     showAdd: function showAdd() {
       this.showFormAdd = true;
     },
+    closeAdd: function closeAdd() {
+      this.showFormAdd = false;
+    },
     addCardKanban: function addCardKanban() {
       this.getKanban();
     },
@@ -12288,19 +12237,7 @@ var _default = {
           token: localStorage.getItem("token")
         }
       }).then(function (response) {
-        _this3.getKanban(); // this.get
-        // if (status == "backlog"){
-        //   console.log(response)
-        //   $this.backlog.getItem(id).status = "product"
-        //     //this.data.status = "product"
-        //     //remove id itu dari backlog
-        //     //add 
-        // } else if (this.data.status == "product"){
-        //     //this.data.status = "development"
-        // } else if (this.data.status == "development"){
-        //     //this.data.status = "done"
-        // }
-
+        _this3.getKanban();
       }).catch(function (err) {// res.status(400).json({msg:"error nextnya coy"})
       });
     },
@@ -12725,6 +12662,15 @@ exports.default = _default;
           )
         ]),
         _vm._v(" "),
+        _vm.showFormAdd
+          ? _c("AddKanban", {
+              on: {
+                emitAddCardKanban: _vm.addCardKanban,
+                emitCloseForm: _vm.closeAdd
+              }
+            })
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -12738,10 +12684,6 @@ exports.default = _default;
           },
           [_vm._v("Add")]
         ),
-        _vm._v(" "),
-        _vm.showFormAdd
-          ? _c("AddKanban", { on: { emitAddCardKanban: _vm.addCardKanban } })
-          : _vm._e(),
         _vm._v(" "),
         _vm.UpdateKanban
           ? _c("UpdateKanban", {
@@ -12921,9 +12863,11 @@ exports.default = _default;
         : _vm._e(),
       _vm._v(" "),
       _vm.openRegisterBtn
-        ? _c("button", { on: { click: _vm.showRegister } }, [
-            _vm._v("Register")
-          ])
+        ? _c(
+            "button",
+            { staticClass: "btn btn-primary", on: { click: _vm.showRegister } },
+            [_vm._v("Register")]
+          )
         : _vm._e(),
       _vm._v(" "),
       _vm.openRegister
@@ -57111,7 +57055,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61660" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51678" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

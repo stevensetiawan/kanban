@@ -22,9 +22,9 @@
       </div>
       <div class="form-group form-check">
         <input type="checkbox" v-model="showPassword" />Show Password
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1"></label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Login</button>
       <g-signin-button
         :params="googleSignInParams"
         @success="onSignInSuccess"

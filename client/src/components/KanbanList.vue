@@ -104,11 +104,10 @@
           </div>
         </div>
       </div>
-      <button @click.prevent="showAdd()" class="btn btn-primary">Add</button>
-      <AddKanban v-if="showFormAdd" @emitAddCardKanban="addCardKanban"></AddKanban>
+      <AddKanban v-if="showFormAdd" @emitAddCardKanban="addCardKanban" @emitCloseForm="closeAdd"></AddKanban>
+    <button @click.prevent="showAdd()" class="btn btn-primary">Add</button>
       <UpdateKanban v-if="UpdateKanban" :taskProp="currentEditTask" @emitTaskUpdated="closeEditForm"></UpdateKanban>
-
-       <!-- <button @click.prevent="showAddKanban">Add</button> -->
+         </div>
     </div>
   <!-- Done end  -->
  
@@ -188,6 +187,9 @@ AddKanban
       showAdd() {
       this.showFormAdd = true;
     },
+    closeAdd(){
+      this.showFormAdd = false;
+    },
     addCardKanban(){
       this.getKanban()
     },
@@ -208,19 +210,6 @@ AddKanban
           }
           ).then(response=>{
             this.getKanban()
-           // this.get
-              // if (status == "backlog"){
-              //   console.log(response)
-              //   $this.backlog.getItem(id).status = "product"
-              //     //this.data.status = "product"
-              //     //remove id itu dari backlog
-              //     //add 
-              // } else if (this.data.status == "product"){
-              //     //this.data.status = "development"
-              // } else if (this.data.status == "development"){
-              //     //this.data.status = "done"
-              // }
-              
           }).catch(err=>{
              // res.status(400).json({msg:"error nextnya coy"})
           })

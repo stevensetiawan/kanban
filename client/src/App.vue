@@ -1,9 +1,8 @@
 <template>
   <div class>
-    <!-- <p>hello world</p> -->
     <Navbar v-if="isLogin" @emitLogout="allLogout"></Navbar>
     <Login @changeLogin="changeLogin" v-if="openLogin"></Login>
-    <button v-if="openRegisterBtn" @click="showRegister">Register</button>
+    <button v-if="openRegisterBtn" @click="showRegister" class="btn btn-primary">Register</button>
     <Register v-if="openRegister" @emitShowLogin="showLogin" @changeLogin="changeLogin"></Register>
     <KanbanList v-if="isLogin"></KanbanList>
 

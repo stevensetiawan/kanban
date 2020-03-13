@@ -21,11 +21,11 @@
       </div>
       <div class="form-group form-check">
         <input type="checkbox" v-model="showPassword" />Show Password
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1"></label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Register</button>
     </form>
-          <button @click.prevent="showLogin">Login</button>
+          <button @click.prevent="showLogin" class="btn btn-primary">Login</button>
   </div>
 </template>
 

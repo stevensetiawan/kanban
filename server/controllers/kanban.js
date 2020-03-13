@@ -64,7 +64,9 @@ class kanbanController {
         let id = {
             where: {
                 UserId: req.userData.data.id
-            }
+            },order: [
+                ['id', 'DESC']
+              ]
         }
         Kanban.findAll(id)
             .then(data => {
