@@ -6,7 +6,7 @@ class kanbanController {
         let input = {
             title: req.body.title,
             description: req.body.description,
-            UserId: req.userData.data.id,
+            UserId: req.userData.id,
             status:"backlog"
         }
 
@@ -43,7 +43,7 @@ class kanbanController {
         let input = {
             title: title,
             description: description,
-            UserId: req.userData.data.id,
+            UserId: req.userData.id,
             status: status
         }
 
@@ -61,9 +61,10 @@ class kanbanController {
     //update end/
 
     static getAll(req, res) {
+        console.log("masuk getall:", req.userData)
         let id = {
             where: {
-                UserId: req.userData.data.id
+                UserId: req.userData.id
             },order: [
                 ['id', 'DESC']
               ]
