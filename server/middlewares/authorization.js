@@ -1,4 +1,4 @@
-const { Kanban, User } = require('../models')
+const { Kanban } = require('../models')
 module.exports = (req, res, next) => {
     const { id } = req.params;
     console.log(id, req.userData)

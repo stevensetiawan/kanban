@@ -1,17 +1,6 @@
     const jwt = require('../helpers/jwt')
     const { User } = require('../models')
     
-    // module.exports=(req,res,next)=>{
-        
-        // let { token } = req.headers
-        //     try{
-        //         req.userData = jwt.jwtVerify(token)
-        //         // console.log(req.userData)
-        //         next()
-        //     } catch(err){
-        //         next(err)
-        //     }
-        // }
     module.exports = (req, res, next) => {
         let { token } = req.headers
         console.log("ini token:",token)
